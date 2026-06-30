@@ -1,108 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schemadrome</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,sans-serif;background:#0a0a1a;color:#fff;overflow-x:hidden}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,26,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
-.nav-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700}
-.nav-logo span{background:linear-gradient(135deg,#ec4899,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-links{display:flex;gap:28px;list-style:none;color:#64748b;font-size:14px}
-.nav-stars{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:13px;color:#94a3b8}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 48px 80px}
-.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(99,102,241,.12) 0%,transparent 50%),radial-gradient(circle at 70% 50%,rgba(168,85,247,.08) 0%,transparent 50%)}
-.hero-content{max-width:900px;text-align:center;position:relative;z-index:1}
-.badge{display:inline-block;padding:6px 16px;border-radius:20px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);color:#a5b4fc;font-size:13px;margin-bottom:24px}
-.hero h1{font-size:52px;font-weight:800;line-height:1.15;margin-bottom:20px;background:linear-gradient(135deg,#fff 0%,#a5b4fc 50%,#c4b5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:18px;color:#94a3b8;line-height:1.7;max-width:640px;margin:0 auto 40px}
-.btns{display:flex;gap:16px;justify-content:center}
-.btn-p{padding:14px 32px;border-radius:12px;background:linear-gradient(135deg,#ec4899,#f97316);color:#fff;font-weight:600;font-size:15px;border:none;text-decoration:none}
-.btn-s{padding:14px 32px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#fff;font-weight:600;font-size:15px;text-decoration:none}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:60px 48px;max-width:1200px;margin:0 auto}
-.fcard{padding:28px;border-radius:14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);backdrop-filter:blur(10px)}
-.fcard .icon{font-size:28px;margin-bottom:12px}
-.fcard h3{font-size:16px;margin-bottom:6px;color:#e2e8f0}
-.fcard p{font-size:13px;color:#64748b;line-height:1.5}
-.sec-title{text-align:center;font-size:28px;font-weight:700;margin:0 0 36px;background:linear-gradient(135deg,#fff,#a5b4fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.sec{padding:60px 48px;max-width:1200px;margin:0 auto}
-.terminal{background:#0d1117;border:1px solid #21262d;border-radius:12px;padding:24px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.8;color:#c9d1d9}
-.terminal .g{color:#3fb950}
-.terminal .b{color:#58a6ff}
-.terminal .p{color:#d2a8ff}
-.terminal .r{color:#f85149}
-.footer{text-align:center;padding:32px;color:#475569;font-size:13px;border-top:1px solid rgba(255,255,255,.04);margin-top:40px}
-@media(max-width:768px){.features{grid-template-columns:1fr}.hero h1{font-size:34px}}
-</style>
-</head>
-<body>
-<nav class="nav">
-  <div class="nav-logo">🏗️ <span>Schemadrome</span></div>
-  <ul class="nav-links"><li>Features</li><li>Documentation</li><li>GitHub</li></ul>
-  <div class="nav-stars">⭐ 42</div>
-</nav>
-
-<section class="hero">
-  <div class="hero-content">
-    <div class="badge">🏗️ Open Source · API Development</div>
-    <h1>Schema-Driven Stateful API Sandbox</h1>
-    <p>Import OpenAPI/GraphQL schema → stateful API with real relationships. POST users, GET them back. Export scenarios as Postman or Playwright tests. Not just static mocks.</p>
-    <div class="btns">
-      <a href="#" class="btn-p">Get Started →</a>
-      <a href="#" class="btn-s">View on GitHub</a>
-    </div>
-  </div>
-</section>
-
-<section class="features">
-  <div class="fcard">
-    <div class="icon">📥</div>
-    <h3>Schema Import</h3>
-    <p>OpenAPI 3.x JSON/YAML or GraphQL → instant API sandbox</p>
-  </div>
-  <div class="fcard">
-    <div class="icon">🧠</div>
-    <h3>Stateful Engine</h3>
-    <p>POST creates, GET returns, PUT updates — real API behavior</p>
-  </div>
-  <div class="fcard">
-    <div class="icon">🔗</div>
-    <h3>Foreign Key Aware</h3>
-    <p>POST /users/1/posts correctly links to user, not random data</p>
-  </div>
-  <div class="fcard">
-    <div class="icon">🎬</div>
-    <h3>Scenario Recorder</h3>
-    <p>Record multi-step API calls → replay as test suite</p>
-  </div>
-  <div class="fcard">
-    <div class="icon">📤</div>
-    <h3>Multi-Export</h3>
-    <p>Postman collection, Playwright test, or cURL command batch</p>
-  </div>
-  <div class="fcard">
-    <div class="icon">🧭</div>
-    <h3>API Explorer</h3>
-    <p>Collapsible sidebar with all endpoints, parameters, responses</p>
-  </div>
-</section>
-
-<section class="sec">
-  <h2 class="sec-title">Quick Start</h2>
-  <div class="terminal">
-    <span class="g">$</span> git clone https://github.com/adlptv/schemadrome.git<br>
-    <span class="g">$</span> cd schemadrome<br>
-    <span class="g">$</span> pnpm install<br>
-    <span class="g">$</span> pnpm dev<br><br>
-    <span class="b">→</span> Open <span class="p">http://localhost:3000</span><br><br>
-    <span class="g">$</span> docker-compose up <span class="b"># or Docker</span>
-  </div>
-</section>
-
-<footer class="footer">
-  Schemadrome · MIT License · Built with Next.js 14, TypeScript, Tailwind CSS, Prisma · <span style="color:#a5b4fc">github.com/adlptv/schemadrome</span>
-</footer>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Schemadrome</title><style>
+      body{font-family:system-ui,sans-serif;background:#f8fafc;color:#0f172a;margin:0}
+      .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 32px;background:#fff;border-bottom:1px solid #e2e8f0}
+      .logo{font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px}
+      .logo span{background:linear-gradient(135deg,#ec4899,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+      .hero{display:flex;gap:40px;padding:60px 32px;max-width:1300px;margin:0 auto}
+      .hero-text{flex:1;padding-top:60px}
+      .hero-text h1{font-size:42px;font-weight:800;line-height:1.15;color:#0f172a;margin:0 0 16px}
+      .hero-text h1 span{color:#ec4899}
+      .hero-text p{font-size:15px;color:#64748b;line-height:1.6;margin:0 0 24px}
+      .btn{display:inline-flex;padding:12px 28px;border-radius:8px;background:linear-gradient(135deg,#ec4899,#f97316);color:#fff;font-weight:600;text-decoration:none}
+      .api-explorer{flex:1.2;background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+      .api-sidebar{display:flex;min-height:420px}
+      .api-nav{width:240px;background:#f8fafc;border-right:1px solid #e2e8f0;padding:16px;overflow-y:auto}
+      .api-nav .section{font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin:16px 0 8px}
+      .api-nav .endpoint{padding:6px 10px;font-size:12px;display:flex;align-items:center;gap:6px;border-radius:4px;margin-bottom:2px;cursor:pointer}
+      .api-nav .endpoint .method{font-weight:700;font-size:10px;min-width:32px}.method.POST{color:#16a34a}.method.GET{color:#2563eb}.method.PUT{color:#d97706}.method.DELETE{color:#dc2626}
+      .api-nav .endpoint .path{color:#475569;font-family:monospace;font-size:11px}
+      .api-main{flex:1;padding:20px}
+      .api-url{display:flex;gap:8px;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border-radius:6px;font-family:monospace;font-size:13px}
+      .api-url .method-badge{padding:3px 10px;border-radius:4px;font-weight:700;font-size:11px}.method-badge.POST{background:#dcfce7;color:#16a34a}
+      .api-url .url{color:#475569}
+      .resp-box{background:#1e293b;border-radius:8px;padding:16px;font-family:monospace;font-size:12px;color:#e2e8f0;line-height:1.7}
+      .resp-box .key{color:#93c5fd}.resp-box .str{color:#86efac}.resp-box .num{color:#fde68a}.resp-box .bool{color:#c4b5fd}
+      .related{margin-top:16px;padding:12px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;font-size:12px;color:#1e40af}
+      .features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:60px 32px;max-width:1300px;margin:0 auto}
+      .fcard{padding:24px;background:#fff;border:1px solid #e2e8f0;border-radius:12px}
+      .fcard h3{font-size:15px;color:#0f172a;margin:0 0 6px}.fcard p{font-size:13px;color:#64748b;margin:0;line-height:1.5}
+    </style></head><body>
+      <nav class="nav"><div class="logo">🏗️ <span>Schemadrome</span></div><div style="font-size:13px;color:#94a3b8">Stateful API Sandbox</div></nav>
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Your <span>Schema.</span><br>Real API <span>Behavior.</span></h1>
+          <p>Import OpenAPI 3.x or GraphQL schema — get a stateful API sandbox that understands foreign keys, maintains state, and lets you record multi-step test scenarios. Export as Postman, Playwright, or cURL.</p>
+          <a href="#" class="btn">Import Schema →</a>
+        </div>
+        <div class="api-explorer">
+          <div class="api-sidebar">
+            <div class="api-nav">
+              <div class="section">Users</div>
+              <div class="endpoint"><span class="method GET">GET</span><span class="path">/users</span></div>
+              <div class="endpoint"><span class="method POST">POST</span><span class="path">/users</span></div>
+              <div class="endpoint"><span class="method GET">GET</span><span class="path">/users/{id}</span></div>
+              <div class="section">Posts</div>
+              <div class="endpoint"><span class="method GET">GET</span><span class="path">/posts</span></div>
+              <div class="endpoint"><span class="method POST">POST</span><span class="path">/posts</span></div>
+              <div class="endpoint"><span class="method GET">GET</span><span class="path">/users/{id}/posts</span></div>
+              <div class="section">Orders</div>
+              <div class="endpoint"><span class="method POST">POST</span><span class="path">/orders</span></div>
+              <div class="endpoint"><span class="method GET">GET</span><span class="path">/orders/{id}</span></div>
+              <div class="endpoint"><span class="method PUT">PUT</span><span class="path">/orders/{id}</span></div>
+              <div class="endpoint"><span class="method DELETE">DELETE</span><span class="path">/orders/{id}</span></div>
+            </div>
+            <div class="api-main">
+              <div class="api-url"><span class="method-badge POST">POST</span><span class="url">/api/mock/users</span></div>
+              <div class="resp-box">
+                <span class="key">Status:</span> <span class="num">201 Created</span><br><br>
+                {<br>
+                &nbsp;&nbsp;<span class="key">"id"</span>: <span class="num">42</span>,<br>
+                &nbsp;&nbsp;<span class="key">"name"</span>: <span class="str">"Jane Doe"</span>,<br>
+                &nbsp;&nbsp;<span class="key">"email"</span>: <span class="str">"jane@example.com"</span>,<br>
+                &nbsp;&nbsp;<span class="key">"createdAt"</span>: <span class="str">"2026-06-30T22:14:00Z"</span><br>
+                }
+              </div>
+              <div class="related">🔗 <strong>Related:</strong> <code>GET /users/42/posts</code> will now return posts linked to user 42 — not random data.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="features">
+        <div class="fcard"><h3>📥 Schema Import</h3><p>OpenAPI 3.x JSON/YAML or GraphQL → instant API sandbox with zero config</p></div>
+        <div class="fcard"><h3>🧠 Stateful Engine</h3><p>POST creates, GET returns, PUT updates, DELETE removes. Real state, not static mocks.</p></div>
+        <div class="fcard"><h3>🔗 FK-Aware</h3><p>POST /users/1/posts correctly links to user 1. Maintains referential integrity.</p></div>
+        <div class="fcard"><h3>🎬 Scenario Recorder</h3><p>Record multi-step API calls → replay as test suite with assertions.</p></div>
+        <div class="fcard"><h3>📤 Multi-Export</h3><p>Export scenarios as Postman collection, Playwright test script, or cURL batch.</p></div>
+        <div class="fcard"><h3>🎲 Smart Data Gen</h3><p>Constraint-aware: unique emails, valid dates, realistic names from your schema types.</p></div>
+      </div>
+    </body></html>

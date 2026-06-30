@@ -30,9 +30,9 @@ Schemadrome imports your OpenAPI 3.x or GraphQL schema and generates a **statefu
 
 ## 📸 Screenshots
 
-| Landing Page | Dashboard |
+| API Explorer with Sidebar Navigation | Stateful POST Response & FK Links |
 |:---:|:---:|
-| ![Schemadrome Hero](screenshots/hero.png) | ![Schemadrome Dashboard](screenshots/dashboard.png) |
+| ![Stateful POST Response & FK Links](screenshots/dashboard.png) |
 
 > 💡 *Run locally to see the full interactive experience: `pnpm dev` then open http://localhost:3000*
 
