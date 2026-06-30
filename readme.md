@@ -8,9 +8,9 @@ Imports OpenAPI 3.x or GraphQL schemas and generates a stateful API sandbox. Res
 
 ## Screenshots
 
-| API Explorer with Sidebar Navigation | Stateful POST Response and FK Links |
+| Landing Page (API Explorer) | Mock Response (Stateful POST) |
 |:---:|:---:|
-| ![API Explorer with Sidebar Navigation](screenshots/hero.png) | ![Stateful POST Response and FK Links](screenshots/dashboard.png) |
+| ![Response viewer: JSON pretty-print with status, headers, and related FK links](screenshots/dashboard.png) |
 
 ## Features
 
