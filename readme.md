@@ -28,6 +28,15 @@ Schemadrome imports your OpenAPI 3.x or GraphQL schema and generates a **statefu
 - 📊 **Response Viewer** — Pretty-printed JSON, headers, timing, status codes
 - 🌓 **Dark/Light Theme**
 
+## 📸 Screenshots
+
+| Landing Page | Dashboard |
+|:---:|:---:|
+| ![Schemadrome Hero](screenshots/hero.png) | ![Schemadrome Dashboard](screenshots/dashboard.png) |
+
+> 💡 *Run locally to see the full interactive experience: `pnpm dev` then open http://localhost:3000*
+
+
 ## 🏗️ Architecture
 
 ```
